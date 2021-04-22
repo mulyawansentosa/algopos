@@ -19,24 +19,19 @@
         </tr>
       </thead>
       <tbody>
+        @php $no = 1; @endphp
+        @foreach($products as $product)
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <th scope="row">{{ $no }}</th>
+          <td>{{ $product->code }}</td>
+          <td>{{ $product->name }}</td>
+          <td>{{ $product->sell_price }}</td>
+          <td>{{ $product->purchase_price }}</td>
+          <td>{{ $product->quantity }}</td>
+          <td>{{ $product->category }}</td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@fat</td>
-        </tr>
+        @php $no++; @endphp
+        @endforeach
       </tbody>
     </table>    
 @endsection
